@@ -1,42 +1,44 @@
 import java.util.Scanner;
 
-public class Main {
+public class UcakBiletiHesaplama {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Doğum gününüzün ayını girin (1-12): ");
-        int ay = scanner.nextInt();
+        // Kullanıcıdan mesafe, yaş ve yolculuk tipi bilgilerini al
+        System.out.print("Mesafeyi (KM) girin: ");
+        int mesafe = scanner.nextInt();
 
-        System.out.print("Doğum gününüzün gününü girin: ");
-        int gun = scanner.nextInt();
+        System.out.print("Yaşı girin: ");
+        int yas = scanner.nextInt();
 
-        // Burç bulma işlemi
-        if ((ay == 3 && gun >= 21) || (ay == 4 && gun <= 19)) {
-            System.out.println("Koç Burcu");
-        } else if ((ay == 4 && gun >= 20) || (ay == 5 && gun <= 20)) {
-            System.out.println("Boğa Burcu");
-        } else if ((ay == 5 && gun >= 21) || (ay == 6 && gun <= 20)) {
-            System.out.println("İkizler Burcu");
-        } else if ((ay == 6 && gun >= 21) || (ay == 7 && gun <= 22)) {
-            System.out.println("Yengeç Burcu");
-        } else if ((ay == 7 && gun >= 23) || (ay == 8 && gun <= 22)) {
-            System.out.println("Aslan Burcu");
-        } else if ((ay == 8 && gun >= 23) || (ay == 9 && gun <= 22)) {
-            System.out.println("Başak Burcu");
-        } else if ((ay == 9 && gun >= 23) || (ay == 10 && gun <= 22)) {
-            System.out.println("Terazi Burcu");
-        } else if ((ay == 10 && gun >= 23) || (ay == 11 && gun <= 21)) {
-            System.out.println("Akrep Burcu");
-        } else if ((ay == 11 && gun >= 22) || (ay == 12 && gun <= 21)) {
-            System.out.println("Yay Burcu");
-        } else if ((ay == 12 && gun >= 22) || (ay == 1 && gun <= 19)) {
-            System.out.println("Oğlak Burcu");
-        } else if ((ay == 1 && gun >= 20) || (ay == 2 && gun <= 18)) {
-            System.out.println("Kova Burcu");
-        } else if ((ay == 2 && gun >= 19) || (ay == 3 && gun <= 20)) {
-            System.out.println("Balık Burcu");
+        System.out.print("Yolculuk tipini seçin (1: Tek Yön, 2: Gidiş-Dönüş): ");
+        int yolculukTipi = scanner.nextInt();
+
+        // Girdi kontrolü
+        if (mesafe <= 0 || yas <= 0 || (yolculukTipi != 1 && yolculukTipi != 2)) {
+            System.out.println("Hatalı Veri Girdiniz!");
         } else {
-            System.out.println("Geçersiz tarih bilgisi girdiniz.");
+            // Mesafe başına ücret
+            double birimUcret = 0.10;
+
+            // Toplam fiyat hesaplama
+            double toplamFiyat = mesafe * birimUcret;
+
+            // İndirim uygulama
+            if (yas < 12) {
+                toplamFiyat *= 0.5; // %50 indirim
+            } else if (yas >= 12 && yas <= 24) {
+                toplamFiyat *= 0.9; // %10 indirim
+            } else if (yas >= 65) {
+                toplamFiyat *= 0.7; // %30 indirim
+            }
+
+            if (yolculukTipi == 2) {
+                toplamFiyat *= 0.8; // %20 indirim
+            }
+
+            // Sonucu ekrana yazdır
+            System.out.println("Toplam Bilet Fiyatı: " + toplamFiyat + " TL");
         }
 
         scanner.close();
