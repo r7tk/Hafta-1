@@ -3,23 +3,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Bir Sayı Giriniz : ");
-        int sayi = input.nextInt();
-        int toplamSayi = 0 ;
+        Scanner rw = new Scanner(System.in);
+        System.out.print("Çizdirmek istediğiniz Piramit için Değer Giriniz : ");
+        int rows = rw.nextInt();
 
-        for(int i = 1; i < sayi; i++){
-            if (sayi%i ==0){
-                toplamSayi += i;
+
+        //int rows = 10;  // Adjust the number of rows as needed
+
+        // Outer loop for the number of rows
+        for (int i = 0; i < rows; i++) {
+            // Inner loop for spaces before the asterisks
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
             }
-        }
-        if (sayi == toplamSayi){
-            System.out.print("Sayı Mükemmel Sayıdır.");
-        }
-        else {
-            System.out.print("Sayı Mükemmel Değildir.");
+
+            // Inner loop for printing asterisks
+            for (int k = 0; k < 2 * (rows - i) - 1; k++) {
+                System.out.print("*");
+            }
+
+            // Move to the next line after each row
+            System.out.println();
         }
     }
 }
-
-
