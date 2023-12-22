@@ -1,26 +1,25 @@
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Bir Sayı Giriniz : ");
-        int sayi = input.nextInt();
-        islem islem = new islem();
-        islem.azaltvearttir(sayi);
-
+public class Main
+{
+    public Test()
+    {
+        System.out.printf("1");
+        new Test(10);
+        System.out.printf("5");
+    }
+    public Test(int temp)
+    {
+        System.out.printf("2");
+        new Test(10, 20);
+        System.out.printf("4");
+    }
+    public Test(int data, int temp)
+    {
+        System.out.printf("3");
 
     }
-    public static class islem {
-        public void azaltvearttir (int sayi){
-            if (sayi <= 0){
-                System.out.print(sayi+" ");
-                return;
-            }
-            System.out.print(sayi+" ");
-            sayi -=5;
-            azaltvearttir(sayi);
-            sayi +=5;
-            System.out.print(sayi+" ");
-        }
+
+    public static void main(String[] args)
+    {
+        Test obj = new Test();
     }
 }
