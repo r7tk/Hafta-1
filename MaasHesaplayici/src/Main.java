@@ -5,8 +5,8 @@ public class Main {
         Employee emp = new Employee("Ömer Faruk BARAN",1100,45,2000);
         System.out.print(emp);
 
-        /* BAŞTA EMP KULLANDIĞIMDA BANA RAM BİLGİSİ GİBİ BİRŞEY VERDİ SONRA toString() metodunu
-        kullandıktan sonra Override edip Stringi ezdi :D Şimdi emp kullanabiliyorum. */
+        /* BAŞTA emp KULLANDIĞIMDA BANA RAM BİLGİSİ GİBİ BİRŞEY VERDİ SONRA toString() metodunu
+        kullandıktan sonra Override edip Stringi ezdi :D Şimdi direk olarak emp kullanabiliyorum. */
 
         }
     }

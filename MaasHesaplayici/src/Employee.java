@@ -39,6 +39,11 @@ public class Employee {
         else
             return 0;
     }
+
+
+    // BAŞTA SOUT'UN İÇİNDE YAZDIKLARIMI toString() içine çektim çalışmadı sonra emp İLE GİRDİĞİM KOMUTLARI this komutu
+    // İLE DEĞİŞTİRDİM ŞİMDİ ÇALIŞTI.
+
     public String toString(){
         return "Adı : "+this.name+"\n"+"Maaşı : "+this.salary+"\n"+"Çalışma Saati : "+this.workHours+"\n"+"Başlangıç Yılı : "+this.hireYear
                 +"\n"+"Vergi : "+this.tax()+"\n"+"Bonus : "+this.bonus()+"\n"+"Maaş Artışı : "+this.raiseSalary()+"\n"+"Vergi ve Bonuslar ile birlikte Maaş : " + (this.salary- this.tax()+ this.bonus())
